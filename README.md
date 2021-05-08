@@ -1,2 +1,3 @@
 # Standart Calculator
-## Made by [definit]:https://github.com/defini7 using C++
+## Made by defini7 using C++
+[defini7](https://github.com/defini7)
