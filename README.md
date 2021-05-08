@@ -1,3 +1,3 @@
 # Standart Calculator
-## Made by defini7 using C++
-[defini7](https://github.com/defini7)
+## Made by [defini7](https://github.com/defini7) using C++
+
