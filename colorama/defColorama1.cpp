@@ -17,6 +17,7 @@ public:
 	virtual bool OnUserUpdate(float fElapsedTime)
 	{
 		Fill(0, 0, ScreenWidth(), ScreenHeight(), PIXEL_SOLID, BG_BLACK);
+		// 1/4 red
 		for (int x = 0; x < ScreenWidth()/2; x++)
 		{
 			for (int y = 0; y < ScreenHeight()/2; y++)
@@ -24,6 +25,7 @@ public:
 				Draw(x, y, PIXEL_SOLID, FG_RED);
 			}
 		}
+		// 2/4 green
 		for (int x = ScreenWidth() / 2; x < ScreenWidth(); x++)
 		{
 			for (int y = 0; y < ScreenHeight() / 2; y++)
@@ -31,6 +33,7 @@ public:
 				Draw(x, y, PIXEL_SOLID, FG_GREEN);
 			}
 		}
+		// 3/4 dark blue
 		for (int x = 0; x < ScreenWidth() / 2; x++)
 		{
 			for (int y = ScreenHeight()/2; y < ScreenHeight(); y++)
@@ -38,6 +41,7 @@ public:
 				Draw(x, y, PIXEL_SOLID, FG_DARK_BLUE);
 			}
 		}
+		// 4/4 white
 		for (int x = ScreenWidth() / 2; x < ScreenWidth(); x++)
 		{
 			for (int y = ScreenHeight() / 2; y < ScreenHeight(); y++)
@@ -47,8 +51,6 @@ public:
 		}
 		return true;
 	}
-private:
-	
 };
 
 int main()
