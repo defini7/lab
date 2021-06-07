@@ -3,12 +3,12 @@ using namespace std;
 
 #include "olcConsoleGameEngine.h"
 
-class Example : public olcConsoleGameEngine
+class defColorama1 : public olcConsoleGameEngine
 {
 public:
-	Example()
+	defColorama1()
 	{
-		m_sAppName = L"RGBT | Colorama";
+		m_sAppName = L"defColorama1";
 	}
 	virtual bool OnUserCreate()
 	{
@@ -53,7 +53,7 @@ private:
 
 int main()
 {
-	Example demo;
+	defColorama1 demo;
 	demo.ConstructConsole(160, 100, 8, 8);
 	demo.Start();
 	return 0;
