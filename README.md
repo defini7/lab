@@ -6,6 +6,6 @@
 
 ## Useful links
 1. [OlcPixelGameEngine](https://github.com/OneLoneCoder/olcPixelGameEngine/blob/master/LICENCE.md) LICENSE
-2. [Virtual Keys Codes](https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes)
+2. [Virtual-Key Codes](https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes)
 
 
