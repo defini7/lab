@@ -3,16 +3,16 @@ let n = function(digit) {
     return oper ? oper(digit) : digit;
   }
 };
-var zero = n(0);
-var one = n(1);
-var two = n(2);
-var three = n(3);
-var four = n(4);
-var five = n(5);
-var six = n(6);
-var seven = n(7);
-var eight = n(8);
-var nine = n(9);
+let zero = n(0);
+let one = n(1);
+let two = n(2);
+let three = n(3);
+let four = n(4);
+let five = n(5);
+let six = n(6);
+let seven = n(7);
+let eight = n(8);
+let nine = n(9);
  
 function plus(r) { return function(l) { return l + r; }; }
 function minus(r) { return function(l) { return l - r; }; }
