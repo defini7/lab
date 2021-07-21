@@ -1,3 +1,6 @@
+/* Simple Minesweeper with flags and bombs 
+(but there is no checking of mine)*/
+
 #include <windows.h>
 #include <gl/gl.h>
 
