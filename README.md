@@ -4,6 +4,9 @@
 1. defColorama1.cpp
 2. defColorama2.cpp
 
+## Files that use [OpenGl](https://www.opengl.org/)
+1. minesweeper.c
+
 ## Useful links
 1. [OlcPixelGameEngine LICENSE](https://github.com/OneLoneCoder/olcPixelGameEngine/blob/master/LICENCE.md)
 2. [Virtual-Key Codes](https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes)
