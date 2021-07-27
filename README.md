@@ -19,7 +19,10 @@
 5. [Author's GitHub](https://github.com/defini7)
 
 ## How to word with ScreenToOpenGL
-First argument is "hwnd", first of all declare "hwnd" like that:
-`HWND hwnd;`
-Second argument is lParam (enter data in main function), just make like that:
-`HWND`
+1 argument - `HWND hwnd`
+2 argument - `LOWORD(lParam)`
+3 argument - `HIWORD(lParam)`
+before 4 and 5 arguments we need to declare `POINTFLOAT pf`
+and then..
+4 argument - `pf.x`
+5 argument - `pf.y`
