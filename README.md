@@ -19,11 +19,12 @@
 5. [Author's GitHub](https://github.com/defini7)
 
 ## How to word with ScreenToOpenGL
-1. argument - `HWND hwnd`
+Before 1 argument let's check declairing of `HWND hwnd`
+1. argument - `hwnd`
 2. argument - `LOWORD(lParam)`
 3. argument - `HIWORD(lParam)`
 
-before 4 and 5 arguments we need to declare `POINTFLOAT pf`
+before 4 and 5 arguments we need to declare `POINTFLOAT pf;`
 
 4. argument - `pf.x`
 5. argument - `pf.y`
