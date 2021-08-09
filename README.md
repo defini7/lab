@@ -19,7 +19,7 @@
 4. [CS50 Sandbox](http://sandbox.cs50.io/)
 5. [Author's GitHub](https://github.com/defini7)
 
-## How to word with ScreenToOpenGL
+## How to work with ScreenToOpenGL
 Before 1 argument let's check declairing of `HWND hwnd`
 1. argument - `hwnd`
 2. argument - `LOWORD(lParam)`
