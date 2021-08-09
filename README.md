@@ -3,6 +3,7 @@
 ## Files that use [OlcPixelGameEngine](https://github.com/OneLoneCoder/olcPixelGameEngine)
 1. defColorama1.cpp
 2. defColorama2.cpp
+3. pseudo_3d_rect.cpp
 
 ## Files that use [OpenGl](https://www.opengl.org/)
 1. minesweeper.c
