@@ -1,10 +1,11 @@
+' Before run a file, open it with notepad and change UTF-8 to ANSI
 Set WshShell = CreateObject("WScript.Shell")
 regKey = "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\"
 DigitalProductId = WshShell.RegRead(regKey & "DigitalProductId")
-Win10ProductName = "Версия Windows 10: " & WshShell.RegRead(regKey & "ProductName") & vbNewLine
-Win10ProductID = "ID продукта: " & WshShell.RegRead(regKey & "ProductID") & vbNewLine
+Win10ProductName = "Г‚ГҐГ°Г±ГЁГї Windows 10: " & WshShell.RegRead(regKey & "ProductName") & vbNewLine
+Win10ProductID = "ID ГЇГ°Г®Г¤ГіГЄГІГ : " & WshShell.RegRead(regKey & "ProductID") & vbNewLine
 Win10ProductKey = ConvertToKey(DigitalProductId)
-ProductKeyLabel ="Ключ Windows 10: " & Win10ProductKey
+ProductKeyLabel ="ГЉГ«ГѕГ· Windows 10: " & Win10ProductKey
 Win10ProductID = Win10ProductName & Win10ProductID & ProductKeyLabel
 MsgBox(Win10ProductID)
 Function ConvertToKey(regKey)
