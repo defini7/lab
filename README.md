@@ -29,3 +29,9 @@ before 4 and 5 arguments we need to declare `POINTFLOAT pf;`
 
 4. argument - `pf.x`
 5. argument - `pf.y`
+
+## What is key.vbs?
+It's usefull thing for windows(7, 8, 10) users, just run it and you can see your:
+1. Windows Version
+2. Windows ID
+3. Windows Activate Key
