@@ -1,8 +1,8 @@
 # Lab
 
 ## Files that use [OlcPixelGameEngine](https://github.com/OneLoneCoder/olcPixelGameEngine)
-1. defColorama1.cpp
-2. defColorama2.cpp
+1. Colorama/defColorama1.cpp
+2. Colorama/defColorama2.cpp
 3. pseudo_3d_rect.cpp
 
 ## Files that use [OpenGl](https://www.opengl.org/)
@@ -11,6 +11,12 @@
 3. GameLogic.h
 4. Objects.h
 5. Source.cpp
+
+## Files that use [wxWidgets](https://www.wxwidgets.org/)
+1. Minesweeper/cApp.cpp
+2. Minesweeper/cApp.h
+3. Minesweeper/cMain.cpp
+4. Minesweeper/cMain.h
 
 ## Useful links
 1. [OlcPixelGameEngine LICENSE](https://github.com/OneLoneCoder/olcPixelGameEngine/blob/master/LICENCE.md)
