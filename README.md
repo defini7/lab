@@ -17,6 +17,14 @@
 2. Minesweeper/cApp.h
 3. Minesweeper/cMain.cpp
 4. Minesweeper/cMain.h
+5. Sprite_Editor/cApp.cpp
+6. Sprite_Editor/cApp.h
+7. Sprite_Editor/cMain.cpp
+8. Sprite_Editor/cMain.h
+9. Sprite_Editor/cCanvas.cpp
+10. Sprite_Editor/cCanvas.h
+11. Sprite_Editor/cEditorFrame.cpp
+12. Sprite_Editor/cEditorFrame.h
 
 ## Useful links
 1. [OlcPixelGameEngine LICENSE](https://github.com/OneLoneCoder/olcPixelGameEngine/blob/master/LICENCE.md)
