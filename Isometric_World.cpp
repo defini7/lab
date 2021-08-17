@@ -6,7 +6,7 @@ class IsometricWorld : public olc::PixelGameEngine
 public:
 	IsometricWorld()
 	{
-		sAppName = "Isometric World";
+		sAppName = "Isometrical world";
 	}
 
 private:
@@ -17,13 +17,17 @@ private:
 	olc::Sprite* sprGround = nullptr;
 	olc::Sprite* sprWallLeft = nullptr;
 	olc::Sprite* sprWallRight = nullptr;
-	olc::Sprite* sprPlayer = nullptr;
 	int* pWorld = nullptr;
 	olc::vi2d vSelectorPos1 = { -1, -1 };
 	olc::vi2d vSelectorPos2 = { -1, -1 };
-	olc::vi2d vPlayerPos = { 240, 100 };
 	bool bSelecting = false;
 	bool bPlayMode = false;
+
+	struct Player
+	{
+		olc::Sprite* spr = nullptr;
+		int wx, wy;
+	} player;
 
 protected:
 	bool OnUserCreate() override
@@ -32,8 +36,12 @@ protected:
 		sprGround = new olc::Sprite("Sprites/ground_tile.png");
 		sprWallLeft = new olc::Sprite("Sprites/wall_left.png");
 		sprWallRight = new olc::Sprite("Sprites/wall_right.png");
-		sprPlayer = new olc::Sprite("Sprites/player.png");
+		player.spr = new olc::Sprite("Sprites/player.png");
 		pWorld = new int[vWorldSize.x * vWorldSize.y]{ 0 };
+
+		player.wx = vWorldSize.x / 2;
+		player.wy = vWorldSize.y / 2;
+
 		return true;
 	}
 
@@ -48,6 +56,14 @@ protected:
 				(vOrigin.x * vTileSize.x) + (x - y) * (vTileSize.x / 2),
 				(vOrigin.y * vTileSize.y) + (x + y) * (vTileSize.y / 2)
 			};
+		};
+
+		auto IsBoard = [&](int nx, int ny)
+		{
+			if (nx < -1 || ny < -1 || ny > vWorldSize.x 
+				|| nx > vWorldSize.x - 2 || ny > vWorldSize.y - 2)
+				return true;
+			return false;
 		};
 
 		olc::vi2d vMouse = { GetMouseX(), GetMouseY() };
@@ -81,12 +97,13 @@ protected:
 				}
 			}
 
-			vPlayerPos = { 240, 100 };
 			vSelectorPos1 = { -1, -1 };
 			vSelectorPos2 = { -1, -1 };
-			vPlayerPos = { 240, 100 };
 			bSelecting = false;
 			bPlayMode = false;
+
+			player.wx = vWorldSize.x/2;
+			player.wy = vWorldSize.y/2;
 		}
 
 		if (!bPlayMode)
@@ -111,37 +128,37 @@ protected:
 
 				if (vSelected.x >= 0 && vSelected.x < vWorldSize.x && vSelected.y >= 0 && vSelected.y < vWorldSize.y)
 				{
-					vSelectorPos2.x = vSelected.x;
-					vSelectorPos2.y = vSelected.y;
+					vSelectorPos2.x = vSelected.x; vSelectorPos2.x++;
+					vSelectorPos2.y = vSelected.y; vSelectorPos2.y++;
 				}
 				bSelecting = true;
 			}
 		}
 		else
 		{
-			if (GetKey(olc::Key::W).bPressed) vPlayerPos.y -= vTileSize.y;
-			if (GetKey(olc::Key::X).bPressed) vPlayerPos.y += vTileSize.y;
-			if (GetKey(olc::Key::A).bPressed) vPlayerPos.x -= vTileSize.x;
-			if (GetKey(olc::Key::D).bPressed) vPlayerPos.x += vTileSize.x;
-			if (GetKey(olc::Key::Q).bPressed)
+			if (GetKey(olc::Key::E).bPressed && !IsBoard(0, player.wy - 1)) player.wy -= 1;
+			if (GetKey(olc::Key::Z).bPressed && !IsBoard(0, player.wy + 1)) player.wy += 1;
+			if (GetKey(olc::Key::Q).bPressed && !IsBoard(player.wx - 1, 0)) player.wx -= 1;
+			if (GetKey(olc::Key::C).bPressed && !IsBoard(player.wx + 1, 0)) player.wx += 1;
+			if (GetKey(olc::Key::W).bPressed && !IsBoard(player.wx - 1, player.wy - 1))
 			{
-				vPlayerPos.x -= vTileSize.x/2;
-				vPlayerPos.y -= vTileSize.y/2;
+				player.wx -= 1;
+				player.wy -= 1;
 			}
-			if (GetKey(olc::Key::E).bPressed)
+			if (GetKey(olc::Key::D).bPressed && !IsBoard(player.wx + 1, player.wy - 1))
 			{
-				vPlayerPos.x += vTileSize.x/2; 
-				vPlayerPos.y -= vTileSize.y/2;
+				player.wx += 1;
+				player.wy -= 1;
 			}
-			if (GetKey(olc::Key::Z).bPressed)
+			if (GetKey(olc::Key::A).bPressed && !IsBoard(player.wx - 1, player.wy + 1))
 			{
-				vPlayerPos.x -= vTileSize.x / 2;
-				vPlayerPos.y += vTileSize.y / 2;
+				player.wx -= 1;
+				player.wy += 1;
 			}
-			if (GetKey(olc::Key::C).bPressed)
+			if (GetKey(olc::Key::X).bPressed && !IsBoard(player.wx + 1, player.wy + 1))
 			{
-				vPlayerPos.x += vTileSize.x / 2;
-				vPlayerPos.y += vTileSize.y / 2;
+				player.wx += 1;
+				player.wy += 1;
 			}
 		}
 
@@ -204,8 +221,10 @@ protected:
 		}
 
 		SetPixelMode(olc::Pixel::ALPHA);
-		DrawSprite(vPlayerPos, sprPlayer);
+		olc::vi2d vWorld = ToScreen(player.wx, player.wy);
+		DrawSprite(vWorld.x, vWorld.y, player.spr);
 		SetPixelMode(olc::Pixel::NORMAL);
+		//std::cout << player.wx << player.wy << std::endl;
 
 		SetPixelMode(olc::Pixel::ALPHA);
 		olc::vi2d vSelectedWorld = ToScreen(vSelected.x, vSelected.y);
@@ -227,7 +246,7 @@ protected:
 		SetPixelMode(olc::Pixel::NORMAL);
 
 		DrawString(4, 4, "Mouse	  : " + std::to_string(vMouse.x) + ", " + std::to_string(vMouse.y), olc::BLACK);
-		DrawString(4, 14, "Player  :" + std::to_string(vPlayerPos.x) + ", " + std::to_string(vPlayerPos.y), olc::BLACK);
+		DrawString(4, 14, "Player  : " + std::to_string(player.wx) + ", " + std::to_string(player.wy), olc::BLACK);
 		DrawString(4, 24, "Cell	   : " + std::to_string(vCell.x) + ", " + std::to_string(vCell.y), olc::BLACK);
 		DrawString(4, 34, "Selected: " + std::to_string(vSelected.x) + ", " + std::to_string(vSelected.y), olc::BLACK);
 		DrawString(4, 44, "Builder Mode: " + std::to_string(!bPlayMode), olc::BLACK);
