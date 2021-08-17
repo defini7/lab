@@ -230,6 +230,7 @@ protected:
 		DrawString(4, 14, "Player  :" + std::to_string(vPlayerPos.x) + ", " + std::to_string(vPlayerPos.y), olc::BLACK);
 		DrawString(4, 24, "Cell	   : " + std::to_string(vCell.x) + ", " + std::to_string(vCell.y), olc::BLACK);
 		DrawString(4, 34, "Selected: " + std::to_string(vSelected.x) + ", " + std::to_string(vSelected.y), olc::BLACK);
+		DrawString(4, 44, "Builder Mode: " + std::to_string(!bPlayMode), olc::BLACK);
 
 		return true;
 	}
