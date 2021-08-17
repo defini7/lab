@@ -1,3 +1,2 @@
 # Instruction for Isometric World game.
-## Controls:
-QWEADZXC
+## Controls: QWEADZXC
