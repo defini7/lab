@@ -1,5 +1,5 @@
 # Instruction for Isometric World game.
 ## Controls:
-   `Q W E
-     A   D
-      Z X C`
+   `Q W E`
+     `A   D`
+      `Z X C`
