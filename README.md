@@ -6,7 +6,7 @@
 3. pseudo_3d_rect.cpp
 4. Isometric_World.cpp
 
-## Files that use [OpenGl](https://www.opengl.org/)
+## Files that use [OpenGl](https://www.opengl.org/) or [GLFW](https://www.glfw.org/) or [GLAD](https://glad.dav1d.de/)
 1. minesweeper.c
 2. ScreenToOpenGL.c
 3. GameLogic.h
