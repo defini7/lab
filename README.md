@@ -12,6 +12,7 @@
 3. GameLogic.h
 4. Objects.h
 5. Source.cpp
+6. GLFW_KEYS.h
 
 ## Files that use [wxWidgets](https://www.wxwidgets.org/)
 1. Minesweeper/cApp.cpp
