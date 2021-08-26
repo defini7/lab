@@ -1,4 +1,4 @@
-// check if .lua file not contain errors
+// check if .lua file doesn't contain errors
 bool CheckLua(lua_State* L, int r)
 {
 	if (r != LUA_OK)
