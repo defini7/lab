@@ -1,4 +1,4 @@
-// 2 options
+// 2 solutions
 #include <vector>
 
 std::vector<int> solution1(std::vector<int> nums) {
