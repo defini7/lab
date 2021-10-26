@@ -172,4 +172,28 @@ int main()
 	}
 
 	std::cout << "Count of decrement iterations before A = B: " << result << std::endl;
+	
+	// For loop
+	__asm
+	{
+		mov result, 0
+
+		mov eax, a
+		mov ebx, b
+
+		mov ecx, 0
+
+		cmp eax, ebx
+		jg FOR_LOOP ;; a > b -> "for" loop
+
+		FOR_LOOP:
+			sub eax, ecx
+			inc ecx
+			cmp eax, ebx
+			jg FOR_LOOP ;; a > b -> again "for" loop
+
+		mov result, ecx
+	}
+
+	std::cout << result << std::endl;
 }
