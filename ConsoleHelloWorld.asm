@@ -1,3 +1,4 @@
+;; only for windows
 null EQU 0
 std_output_handle EQU -11
 
