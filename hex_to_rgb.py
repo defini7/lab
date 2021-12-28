@@ -1,4 +1,4 @@
-def hex_string_to_RGB(hex_string):
+def hex_to_rgb(hex_string):
     hex_string = hex_string.replace('#', '')
     rgb = []
     for i in (0, 2, 4):
