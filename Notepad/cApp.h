@@ -10,7 +10,7 @@ public:
 	~cApp();
 
 private:
-	cMain* wxFrame = nullptr;
+	cMain* m_frame = nullptr;
 
 public:
 	virtual bool OnInit();
