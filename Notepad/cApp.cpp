@@ -12,7 +12,7 @@ cApp::~cApp()
 
 bool cApp::OnInit()
 {
-	wxFrame = new cMain();
-	wxFrame->Show();
+	m_frame = new cMain();
+	m_frame->Show();
 	return true;
 }
