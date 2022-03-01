@@ -11,8 +11,8 @@ def do_dollar(from_currency, to_currency, api_key):
 
     buy = result['Realtime Currency Exchange Rate']['5. Exchange Rate']
     time = result['Realtime Currency Exchange Rate']['6. Last Refreshed']
-    print(f'{time}. Buy for: {buy}')
+    print(f'{time}. 1 USD - %0.4f RUB' % float(buy))
 
-    sleep(15) # because limit is 5 requests in a minute
+    sleep(15)
 
-do_dollar('USD', 'RUB', '##YOUR TOKEN GOES HERE##')
+do_dollar('USD', 'RUB', '### YOUR API GOES HERE ###')
