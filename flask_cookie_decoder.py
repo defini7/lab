@@ -9,7 +9,7 @@ signer_kwargs = {
     'digest_method': hashlib.sha1
 }
 
-# you can set secret key using "app.secret_key="yoursecretkey" in your main file"
+# you can set secret key using "app.secret_key="yoursecretkey"" in your main file
 s = URLSafeTimedSerializer('your secret key', salt=salt, serializer=serializer, signer_kwargs=signer_kwargs)
 # cookie code after "session="
 print(s.loads('your cookie to decode'))
